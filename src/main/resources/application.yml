@@ -1,0 +1,67 @@
+micronaut:
+  application:
+    name: micSample1
+   
+micronaut:
+  server:
+    cors:
+      enabled: true
+      
+micronaut:
+  server:
+    host: "0.0.0.0, ::"
+    
+endpoints:
+  all:
+    enabled: true
+    sensitive: false      
+  
+micronaut:
+  metrics:
+    enabled: true
+    
+micronaut:
+  security:
+    authentication:
+      ldap:
+        enabled: true
+        url: ldaps://XXXX:636/
+        user-dn-pattern: (employeeID={0})
+        user-search-base: dc=sso,dc=xxx,dc=ad
+        manager-dn: ''
+        manager-password: ''
+                     
+micronaut:
+    security:
+      authentication: bearer
+    token:
+        jwt:
+            signatures:
+                secret:
+                    generator:
+                        secret: ${JWT_GENERATOR_SIGNATURE_SECRET\:pleaseChangeThisSecretForANewOne}
+
+ 
+netty:
+  default:
+   allocator:
+      max-order: 3      
+    
+team:
+  name: 'Steelers'
+  color: 'Black'
+  player-names:
+    - 'Mason Rudolph'
+    - 'James Connor'
+  team-admin:
+    manager: 'Nirav Assar' 
+    coach: 'Mike Tomlin'
+    president: 'Dan Rooney'
+    
+stadium:
+  coors: 
+    city: 'Denver'
+    size: 50000
+  pnc:
+    city: 'Pittsburgh'
+    size: 35000
